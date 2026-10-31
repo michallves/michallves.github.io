@@ -26,9 +26,9 @@ const cv = {
     summary:
       "Líder técnico e desenvolvedor full stack, mobile e DevOps. Atuo do planejamento e da arquitetura até a entrega e a manutenção, com Scrum e Kanban, em projetos de P&D ligados ao LAMPI/IFCE e à EMBRAPII, e aplico IA generativa em produtos.",
     jobs: [
-      ["ALMA Labs e JUS Workspace", "Tech Lead", "2026 – atual", "Liderança técnica e padrões do time: fluxo de desenvolvimento, code review com prazo de 24 horas e SemVer por commit."],
+      ["ALMA Labs (antes DARM Labs)", "Tech Lead", "mai/2026 – out/2026", "Liderança técnica do JUS Workspace e padrões do time: fluxo de desenvolvimento, code review com prazo de 24 horas e SemVer por commit."],
       ["GESAD", "Tech Lead e DevOps", "2026 – atual", "DevOps da área de TI e liderança técnica do projeto IncluEdu."],
-      ["DARM Group e DARM Labs", "Full stack, mobile, DevOps e líder do laboratório", "2022 – 2025", "Desenvolvimento em tempo integral e liderança do laboratório, com mais de 20 bolsistas presenciais."],
+      ["DARM Group e DARM Labs", "Full stack, mobile, DevOps e líder do laboratório", "2022 – 2026", "Desenvolvimento em tempo integral e liderança do laboratório, com mais de 20 bolsistas presenciais."],
       ["LAMPI/IFCE", "Mobile e gestão de projetos", "2022 – 2023", "Aplicativos Flutter para projetos de pesquisa e gestão de projetos."],
       ["All Tech Solution", "Desenvolvedor Flutter", "2023", "Desenvolvimento de aplicativos mobile."],
     ],
@@ -52,9 +52,9 @@ const cv = {
     summary:
       "Technical lead and full stack, mobile and DevOps developer. I work from planning and architecture through delivery and maintenance, with Scrum and Kanban, on R&D projects tied to LAMPI/IFCE and EMBRAPII, and I apply generative AI to products.",
     jobs: [
-      ["ALMA Labs and JUS Workspace", "Tech Lead", "2026 – present", "Technical leadership and team standards: development flow, code review within 24 hours and SemVer per commit."],
+      ["ALMA Labs (formerly DARM Labs)", "Tech Lead", "May 2026 – Oct 2026", "Technical leadership of JUS Workspace and team standards: development flow, code review within 24 hours and SemVer per commit."],
       ["GESAD", "Tech Lead and DevOps", "2026 – present", "DevOps for the IT area and technical leadership of the IncluEdu project."],
-      ["DARM Group and DARM Labs", "Full stack, mobile, DevOps and lab lead", "2022 – 2025", "Full-time development and leadership of the lab, with more than 20 on-site research fellows."],
+      ["DARM Group and DARM Labs", "Full stack, mobile, DevOps and lab lead", "2022 – 2026", "Full-time development and leadership of the lab, with more than 20 on-site research fellows."],
       ["LAMPI/IFCE", "Mobile and project management", "2022 – 2023", "Flutter apps for research projects and project management."],
       ["All Tech Solution", "Flutter developer", "2023", "Mobile app development."],
     ],

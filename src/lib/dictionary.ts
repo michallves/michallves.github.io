@@ -44,7 +44,7 @@ export const dictionary = {
       chartNote: "2026 contado até 31 de outubro.",
       leadershipTitle: "Liderança e comunidade",
       leadership: [
-        { title: "DARM Labs", text: "Liderei o laboratório, com mais de 20 bolsistas presenciais." },
+        { title: "DARM Labs, hoje ALMA Labs", text: "Liderei o laboratório, com mais de 20 bolsistas presenciais." },
         { title: "II Tech Week", text: "Organizei o evento com o LAMPI: três minicursos e três palestras, em novembro de 2025." },
         { title: "Formação", text: "Dei minicursos de Next.js, GitHub e mobile, e montei uma trilha de front-end para voluntários." },
         { title: "Padrões de time", text: "Defini fluxo de trabalho, code review com prazo de 24 horas e SemVer por commit." },
@@ -79,7 +79,7 @@ export const dictionary = {
         { year: "2023", title: "Mobile em P&D", text: "Mobile e gestão de projetos no LAMPI/IFCE, e desenvolvimento Flutter na All Tech Solution." },
         { year: "2024", title: "Maestro", text: "Liderança full stack do Maestro no DARM, com Next.js, Spring Boot e AWS." },
         { year: "2025", title: "Liderança do laboratório", text: "À frente do DARM Labs, com mais de 20 bolsistas, e organização da II Tech Week." },
-        { year: "2026", title: "Tech lead", text: "JUS Workspace e ALMA Labs. No GESAD, DevOps e o início do IncluEdu. Conclusão da graduação prevista para o fim do ano." },
+        { year: "2026", title: "ALMA Labs e GESAD", text: "O DARM Labs vira ALMA Labs em maio, e sigo como tech lead até outubro, com o JUS Workspace. No GESAD, DevOps e o início do IncluEdu. Conclusão da graduação prevista para o fim do ano." },
       ],
     },
     contact: {
@@ -139,7 +139,7 @@ export const dictionary = {
       chartNote: "2026 counted through October 31.",
       leadershipTitle: "Leadership and community",
       leadership: [
-        { title: "DARM Labs", text: "I led the lab, with more than 20 on-site research fellows." },
+        { title: "DARM Labs, now ALMA Labs", text: "I led the lab, with more than 20 on-site research fellows." },
         { title: "II Tech Week", text: "I organized the event with LAMPI: three short courses and three talks, in November 2025." },
         { title: "Teaching", text: "I taught short courses on Next.js, GitHub and mobile, and built a front-end track for volunteers." },
         { title: "Team standards", text: "I defined the workflow, code review within 24 hours and SemVer per commit." },
@@ -174,7 +174,7 @@ export const dictionary = {
         { year: "2023", title: "Mobile in R&D", text: "Mobile and project management at LAMPI/IFCE, and Flutter development at All Tech Solution." },
         { year: "2024", title: "Maestro", text: "Full stack leadership of Maestro at DARM, with Next.js, Spring Boot and AWS." },
         { year: "2025", title: "Leading the lab", text: "Heading DARM Labs, with more than 20 research fellows, and organizing II Tech Week." },
-        { year: "2026", title: "Tech lead", text: "JUS Workspace and ALMA Labs. At GESAD, DevOps and the start of IncluEdu. Graduation expected by the end of the year." },
+        { year: "2026", title: "ALMA Labs and GESAD", text: "DARM Labs becomes ALMA Labs in May, and I stay on as tech lead until October, with JUS Workspace. At GESAD, DevOps and the start of IncluEdu. Graduation expected by the end of the year." },
       ],
     },
     contact: {

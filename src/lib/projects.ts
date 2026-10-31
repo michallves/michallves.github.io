@@ -72,12 +72,6 @@ export const featured: Project[] = [
     stack: [],
     status: starting,
   },
-  {
-    name: "EyeMed",
-    role: { pt: "Líder técnico", en: "Technical lead" },
-    stack: [],
-    status: starting,
-  },
 ];
 
 export const others: Project[] = [
