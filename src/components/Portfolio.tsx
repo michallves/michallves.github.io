@@ -6,6 +6,7 @@ import Lenis from "lenis";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { HelmetCanvas, type HeroScene } from "@/components/HelmetCanvas";
 import { IntroCrawl } from "@/components/IntroCrawl";
+import { SocialLinks } from "@/components/SocialLinks";
 import { Sections } from "@/components/Sections";
 import { dictionary, type Locale } from "@/lib/dictionary";
 import { createSound, type Sound } from "@/lib/sound";
@@ -273,9 +274,7 @@ export function Portfolio() {
                   <a className="hero-cta" href="#campanhas">
                     {text.cta}
                   </a>
-                  <a className="hero-cta hero-cta--ghost" href={text.contact.cvFile} download>
-                    {text.ctaCv}
-                  </a>
+                  <SocialLinks />
                 </div>
               </div>
 

@@ -287,6 +287,51 @@ button.hero-cta {
   gap: 12px;
 }
 
+.hero-actions {
+  align-items: center;
+}
+
+.socials {
+  display: flex;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.socials a {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 1px solid var(--line);
+  color: var(--text);
+  transition: background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.socials a:hover {
+  border-color: var(--saber);
+  background: rgb(255 42 31 / 0.16);
+  box-shadow: 0 0 24px rgb(255 42 31 / 0.4);
+}
+
+.socials svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+@media (max-width: 380px) {
+  .hero-actions {
+    gap: 8px;
+  }
+
+  .socials a {
+    width: 44px;
+    height: 44px;
+  }
+}
+
 .hero-cta--ghost {
   border-color: var(--line);
   background: none;

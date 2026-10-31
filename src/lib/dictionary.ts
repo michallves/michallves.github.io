@@ -18,7 +18,6 @@ export const dictionary = {
     role: "Tech Lead · Full Stack · Mobile · DevOps",
     tagline: "Lidero times e construo produtos, do aplicativo ao deploy.",
     cta: "Ver projetos",
-    ctaCv: "Currículo",
     scroll: "Role para continuar",
     facts: [
       { value: "Tech Lead", label: "em projetos de P&D com o IFCE" },
@@ -113,7 +112,6 @@ export const dictionary = {
     role: "Tech Lead · Full Stack · Mobile · DevOps",
     tagline: "I lead teams and build products, from the app to the deploy.",
     cta: "View projects",
-    ctaCv: "Résumé",
     scroll: "Scroll to continue",
     facts: [
       { value: "Tech Lead", label: "on R&D projects with IFCE" },
