@@ -18,7 +18,7 @@ export const dictionary = {
     role: "Tech Lead · Full Stack · Mobile · DevOps",
     tagline: "Lidero times e construo produtos, do aplicativo ao deploy.",
     cta: "Ver projetos",
-    scroll: "Role para continuar",
+    portraitAlt: "Michael Alves, de camisa preta, olhando para a esquerda",
     facts: [
       { value: "Tech Lead", label: "em projetos de P&D com o IFCE" },
       { value: "3.690", label: "contribuições no GitHub em 2026" },
@@ -92,7 +92,7 @@ export const dictionary = {
       cv: "Baixar currículo",
       cvFile: "/cv/michael-alves-cv-pt.pdf",
     },
-    footer: "Portfólio pessoal, sem vínculo com a Lucasfilm ou a Disney. Capacete e efeitos feitos em código.",
+    footer: "Portfólio pessoal inspirado em Star Wars, sem vínculo com a Lucasfilm ou a Disney.",
     replay: "Rever abertura",
   },
   en: {
@@ -112,7 +112,7 @@ export const dictionary = {
     role: "Tech Lead · Full Stack · Mobile · DevOps",
     tagline: "I lead teams and build products, from the app to the deploy.",
     cta: "View projects",
-    scroll: "Scroll to continue",
+    portraitAlt: "Michael Alves in a black shirt, looking to the left",
     facts: [
       { value: "Tech Lead", label: "on R&D projects with IFCE" },
       { value: "3,690", label: "GitHub contributions in 2026" },
@@ -186,7 +186,7 @@ export const dictionary = {
       cv: "Download résumé",
       cvFile: "/cv/michael-alves-cv-en.pdf",
     },
-    footer: "Personal portfolio, not affiliated with Lucasfilm or Disney. Helmet and effects made in code.",
+    footer: "Personal portfolio inspired by Star Wars, not affiliated with Lucasfilm or Disney.",
     replay: "Replay intro",
   },
 } as const;

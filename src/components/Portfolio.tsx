@@ -4,7 +4,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { HelmetCanvas, type HeroScene } from "@/components/HelmetCanvas";
 import { IntroCrawl } from "@/components/IntroCrawl";
 import { SocialLinks } from "@/components/SocialLinks";
 import { Sections } from "@/components/Sections";
@@ -14,7 +13,7 @@ import { createSound, type Sound } from "@/lib/sound";
 const STORAGE_KEY = "portfolio-locale";
 const INTRO_KEY = "portfolio-intro-seen";
 
-function shouldUsePoster() {
+function shouldReduceMotion() {
   const connection = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
   return Boolean(
     window.matchMedia("(prefers-reduced-motion: reduce)").matches || connection?.saveData,
@@ -23,20 +22,14 @@ function shouldUsePoster() {
 
 export function Portfolio() {
   const [locale, setLocale] = useState<Locale>("pt");
-  const [mode, setMode] = useState<"pending" | "live" | "poster">("pending");
+  const [mode, setMode] = useState<"pending" | "live" | "static">("pending");
   const [introPlaying, setIntroPlaying] = useState(false);
   const [soundOn, setSoundOn] = useState(false);
   const rootRef = useRef<HTMLElement>(null);
   const heroRef = useRef<HTMLElement>(null);
   const lenisRef = useRef<Lenis | null>(null);
   const soundRef = useRef<Sound | null>(null);
-  const scene = useRef<HeroScene>({ ignite: 0, scroll: 0, lookX: 0, lookY: 0, paused: false });
   const text = dictionary[locale];
-
-  const usePoster = useCallback(() => {
-    setIntroPlaying(false);
-    setMode("poster");
-  }, []);
 
   const finishIntro = useCallback(() => {
     try {
@@ -53,10 +46,10 @@ export function Portfolio() {
       introSeen = localStorage.getItem(INTRO_KEY) === "1";
     } catch {}
     const preferred = saved ?? (navigator.language.toLowerCase().startsWith("pt") ? "pt" : "en");
-    const poster = shouldUsePoster();
+    const reduced = shouldReduceMotion();
     setLocale(preferred === "en" ? "en" : "pt");
-    setIntroPlaying(!poster && !introSeen && window.scrollY === 0 && !window.location.hash);
-    setMode(poster ? "poster" : "live");
+    setIntroPlaying(!reduced && !introSeen && window.scrollY === 0 && !window.location.hash);
+    setMode(reduced ? "static" : "live");
   }, []);
 
   useEffect(() => {
@@ -115,25 +108,6 @@ export function Portfolio() {
     gsap.ticker.lagSmoothing(0);
 
     const context = gsap.context(() => {
-      const timeline = gsap.timeline({
-        defaults: { ease: "none" },
-        scrollTrigger: {
-          trigger: heroRef.current,
-          start: "top top",
-          end: "bottom bottom",
-          scrub: true,
-          onUpdate: (self) => {
-            scene.current.scroll = self.progress;
-          },
-        },
-      });
-      timeline
-        .to(".hero-intro", { autoAlpha: 0, y: -28, duration: 0.2 }, 0.14)
-        .to(".hero-scroll", { autoAlpha: 0, duration: 0.08 }, 0.02)
-        .fromTo(".hero-facts", { autoAlpha: 0, y: 24 }, { autoAlpha: 1, y: 0, duration: 0.12 }, 0.28)
-        .to(".hero-facts", { autoAlpha: 0, y: -24, duration: 0.12 }, 0.74)
-        .set({}, {}, 1);
-
       gsap.utils.toArray<HTMLElement>(".reveal").forEach((element) => {
         gsap.from(element, {
           autoAlpha: 0,
@@ -167,20 +141,7 @@ export function Portfolio() {
       });
     }, rootRef);
 
-    const onPointerMove = (event: PointerEvent) => {
-      if (event.pointerType === "touch") return;
-      gsap.to(scene.current, {
-        lookX: (event.clientX / window.innerWidth - 0.5) * 2,
-        lookY: (event.clientY / window.innerHeight - 0.5) * 2,
-        duration: 1.1,
-        ease: "power2.out",
-        overwrite: "auto",
-      });
-    };
-    window.addEventListener("pointermove", onPointerMove, { passive: true });
-
     return () => {
-      window.removeEventListener("pointermove", onPointerMove);
       gsap.ticker.remove(onTick);
       context.revert();
       lenis.destroy();
@@ -188,13 +149,11 @@ export function Portfolio() {
     };
   }, [mode]);
 
-  // O sabre acende sozinho quando a abertura termina, para quem não rolar a página também ver o efeito
+  // Trava a rolagem durante a abertura e revela o texto do início quando ela termina
   useEffect(() => {
     if (mode !== "live") return;
     const root = document.documentElement;
-    scene.current.paused = introPlaying;
     if (introPlaying) {
-      scene.current.ignite = 0;
       root.classList.add("intro-lock");
       lenisRef.current?.stop();
       return () => {
@@ -204,7 +163,6 @@ export function Portfolio() {
     }
 
     const context = gsap.context(() => {
-      gsap.to(scene.current, { ignite: 1, duration: 1.25, delay: 0.35, ease: "power3.out" });
       gsap.from(".hero-reveal", {
         autoAlpha: 0,
         y: 16,
@@ -252,14 +210,15 @@ export function Portfolio() {
 
       <main ref={rootRef}>
         <noscript>
-          <style>{".hero--pending .hero-copy,.hero--pending .hero-scroll{opacity:1}"}</style>
+          <style>{".hero--pending .hero-copy,.hero--pending .hero-facts{opacity:1}"}</style>
         </noscript>
 
         <section ref={heroRef} className={`hero hero--${mode}`} aria-labelledby="hero-title">
           <div className="hero-stage">
-            <div className="hero-poster" aria-hidden="true" />
-            {mode === "live" && <HelmetCanvas scene={scene} onUnavailable={usePoster} />}
-            <div className="hero-shade" aria-hidden="true" />
+            <span className="hero-saber" aria-hidden="true" />
+            <div className="hero-portrait">
+              <img src="/michael.webp" width={1200} height={1202} alt={text.portraitAlt} fetchPriority="high" />
+            </div>
 
             <div className="hero-copy">
               <div className="hero-intro">
@@ -277,21 +236,16 @@ export function Portfolio() {
                   <SocialLinks />
                 </div>
               </div>
-
-              <ul className="hero-facts">
-                {text.facts.map((fact) => (
-                  <li key={fact.value}>
-                    <strong>{fact.value}</strong>
-                    <span>{fact.label}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
 
-            <p className="hero-scroll hero-reveal" aria-hidden="true">
-              {text.scroll}
-              <span className="hero-scroll-line" />
-            </p>
+            <ul className="hero-facts">
+              {text.facts.map((fact) => (
+                <li key={fact.value}>
+                  <strong>{fact.value}</strong>
+                  <span>{fact.label}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
