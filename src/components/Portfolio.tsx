@@ -91,6 +91,34 @@ export function Portfolio() {
     };
   }, []);
 
+  // A lâmina cresce de 22% a 100% conforme o progresso da rolagem
+  useEffect(() => {
+    if (mode === "pending") return;
+    const root = document.documentElement;
+    if (mode === "static") {
+      root.style.setProperty("--saber-p", "1");
+      return;
+    }
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const max = root.scrollHeight - window.innerHeight;
+      const progress = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 1;
+      root.style.setProperty("--saber-p", (0.22 + 0.78 * progress).toFixed(4));
+    };
+    const onScroll = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (frame) cancelAnimationFrame(frame);
+    };
+  }, [mode]);
+
   const replayIntro = () => {
     lenisRef.current?.scrollTo(0, { immediate: true, force: true });
     setIntroPlaying(true);
@@ -206,6 +234,13 @@ export function Portfolio() {
         </button>
       </header>
 
+      <div className="saber" aria-hidden="true">
+        <span className="saber-hilt" />
+        <span className="saber-ignite">
+          <span className="saber-blade" />
+        </span>
+      </div>
+
       {introPlaying && <IntroCrawl text={text.intro} onDone={finishIntro} />}
 
       <main ref={rootRef}>
@@ -215,7 +250,6 @@ export function Portfolio() {
 
         <section ref={heroRef} className={`hero hero--${mode}`} aria-labelledby="hero-title">
           <div className="hero-stage">
-            <span className="hero-saber" aria-hidden="true" />
             <div className="hero-portrait">
               <img src="/michael.webp" width={1200} height={1202} alt={text.portraitAlt} fetchPriority="high" />
             </div>

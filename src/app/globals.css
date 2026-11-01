@@ -7,6 +7,7 @@
   --saber-soft: #ff6a5e;
   --line: rgb(255 255 255 / 0.14);
   --gutter: clamp(16px, 5vw, 72px);
+  --topbar-h: 64px;
 }
 
 *,
@@ -173,22 +174,47 @@ html.intro-lock body {
     var(--void);
 }
 
-.hero-saber {
-  position: absolute;
-  z-index: 1;
-  top: 0;
+.saber {
+  position: fixed;
+  z-index: 15;
+  top: var(--topbar-h);
   bottom: 0;
-  right: clamp(18px, 4vw, 64px);
-  width: 3px;
-  border-radius: 3px;
-  background: linear-gradient(180deg, #ffd9d4, #fff 12%, #fff 88%, #ffb5ad);
-  box-shadow: 0 0 10px 2px rgb(255 120 105 / 0.9), 0 0 36px 8px rgb(255 42 31 / 0.55), 0 0 110px 26px rgb(255 42 31 / 0.22);
-  transform-origin: 50% 100%;
+  right: clamp(14px, 3vw, 40px);
+  width: 9px;
+  pointer-events: none;
+}
+
+.saber-hilt {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 30px;
+  border-radius: 2px 2px 1px 1px;
+  background:
+    repeating-linear-gradient(180deg, transparent 0 5px, rgb(0 0 0 / 0.55) 5px 6px),
+    linear-gradient(90deg, #2a2b31, #8d8f98 45%, #2a2b31);
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 0.6);
+}
+
+.saber-ignite {
+  position: absolute;
+  inset: 30px 0 0;
+  transform-origin: 50% 0;
   animation: ignite 1.3s cubic-bezier(0.2, 0.8, 0.2, 1) 0.5s both;
 }
 
-html.intro-lock .hero-saber {
+html.intro-lock .saber-ignite {
   animation-play-state: paused;
+}
+
+.saber-blade {
+  position: absolute;
+  inset: 0 3px;
+  border-radius: 0 0 3px 3px;
+  background: linear-gradient(180deg, #fff, #fff 88%, #ffb5ad);
+  box-shadow: 0 0 10px 2px rgb(255 120 105 / 0.9), 0 0 36px 8px rgb(255 42 31 / 0.55), 0 0 110px 26px rgb(255 42 31 / 0.22);
+  transform: scaleY(var(--saber-p, 0.22));
+  transform-origin: 50% 0;
+  will-change: transform;
 }
 
 @keyframes ignite {
@@ -204,7 +230,7 @@ html.intro-lock .hero-saber {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-saber {
+  .saber-ignite {
     animation: none;
   }
 }
@@ -406,9 +432,21 @@ button.hero-cta {
     mask-image: linear-gradient(180deg, #000 70%, transparent 100%), linear-gradient(90deg, transparent 0, #000 26%);
   }
 
-  .hero-saber {
-    right: 14px;
-    opacity: 0.85;
+  .saber {
+    right: 8px;
+    width: 7px;
+  }
+
+  .saber-hilt {
+    height: 22px;
+  }
+
+  .saber-ignite {
+    top: 22px;
+  }
+
+  .saber-blade {
+    inset: 0 2px;
   }
 
   .hero-copy {
