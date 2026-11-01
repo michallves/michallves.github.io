@@ -235,7 +235,34 @@ export function Portfolio() {
       </header>
 
       <div className="saber" aria-hidden="true">
-        <span className="saber-hilt" />
+        <svg className="saber-hilt" viewBox="0 0 130 40" focusable="false">
+          <defs>
+            <linearGradient id="hilt-body" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stopColor="#34353b" />
+              <stop offset=".45" stopColor="#0f1013" />
+              <stop offset="1" stopColor="#25262b" />
+            </linearGradient>
+            <linearGradient id="hilt-silver" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stopColor="#f4f5f7" />
+              <stop offset=".55" stopColor="#b5b7be" />
+              <stop offset="1" stopColor="#6c6e76" />
+            </linearGradient>
+          </defs>
+          <rect x="1" y="4" width="110" height="32" rx="5" fill="url(#hilt-body)" />
+          <rect x="0" y="3" width="7" height="34" rx="3.5" fill="#cfd1d6" />
+          <rect x="2.2" y="5.5" width="2.2" height="29" rx="1.1" fill="#7a7c84" />
+          <rect x="10" y="11" width="50" height="5" rx="2.5" fill="#a9abb2" />
+          <rect x="10" y="24" width="50" height="5" rx="2.5" fill="#a9abb2" />
+          <rect x="61" y="2" width="22" height="36" fill="#08080a" />
+          <path d="M64 2v36M67.5 2v36M71 2v36M74.5 2v36M78 2v36M81.5 2v36" stroke="#3b3c42" strokeWidth="1.4" />
+          <rect x="84" y="9" width="26" height="7" fill="url(#hilt-silver)" />
+          <rect x="84" y="24" width="26" height="7" fill="url(#hilt-silver)" />
+          <rect x="84" y="17" width="26" height="6" fill="#16171b" />
+          <rect x="94" y="3" width="8" height="5" rx="1.2" fill="#d0342a" />
+          <path d="M110 5h13l7 3.5-3 24-17 2.5z" fill="#0b0c0f" />
+          <path d="M113 9h8l-.8 5h-7zM112.5 23h8.5l-.8 5.5h-7.5z" fill="#2c3036" />
+          <path d="M123 5l7 3.5-3 24-3-.5z" fill="#1f2025" />
+        </svg>
         <span className="saber-ignite">
           <span className="saber-blade" />
         </span>

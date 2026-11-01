@@ -8,6 +8,8 @@
   --line: rgb(255 255 255 / 0.14);
   --gutter: clamp(16px, 5vw, 72px);
   --topbar-h: 64px;
+  --hilt-w: 92px;
+  --blade-h: 10px;
 }
 
 *,
@@ -73,7 +75,10 @@ a {
   justify-content: space-between;
   gap: 16px;
   padding: 10px var(--gutter);
-  background: linear-gradient(180deg, rgb(5 5 7 / 0.82), transparent);
+  height: var(--topbar-h);
+  background: rgb(5 5 7 / 0.94);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 .concept {
@@ -176,30 +181,31 @@ html.intro-lock body {
 
 .saber {
   position: fixed;
-  z-index: 15;
-  top: var(--topbar-h);
-  bottom: 0;
-  right: clamp(14px, 3vw, 40px);
-  width: 9px;
+  z-index: 21;
+  top: calc(var(--topbar-h) - var(--blade-h) / 2);
+  left: 0;
+  right: 0;
+  height: var(--blade-h);
   pointer-events: none;
 }
 
 .saber-hilt {
   position: absolute;
-  inset: 0 0 auto;
-  height: 30px;
-  border-radius: 2px 2px 1px 1px;
-  background:
-    repeating-linear-gradient(180deg, transparent 0 5px, rgb(0 0 0 / 0.55) 5px 6px),
-    linear-gradient(90deg, #2a2b31, #8d8f98 45%, #2a2b31);
-  box-shadow: 0 0 0 1px rgb(0 0 0 / 0.6);
+  top: 50%;
+  left: var(--gutter);
+  width: var(--hilt-w);
+  height: auto;
+  aspect-ratio: 130 / 40;
+  translate: 0 -50%;
+  z-index: 2;
+  filter: drop-shadow(0 0 3px rgb(0 0 0 / 0.8));
 }
 
 .saber-ignite {
   position: absolute;
-  inset: 30px 0 0;
-  transform-origin: 50% 0;
-  animation: ignite 1.3s cubic-bezier(0.2, 0.8, 0.2, 1) 0.5s both;
+  inset: 0 0 0 calc(var(--gutter) + var(--hilt-w) - 12px);
+  transform-origin: 0 50%;
+  animation: ignite 1.3s cubic-bezier(0.2, 0.8, 0.2, 1) 0.5s both, hum 2.6s ease-in-out 1.8s infinite;
 }
 
 html.intro-lock .saber-ignite {
@@ -208,23 +214,50 @@ html.intro-lock .saber-ignite {
 
 .saber-blade {
   position: absolute;
-  inset: 0 3px;
-  border-radius: 0 0 3px 3px;
-  background: linear-gradient(180deg, #fff, #fff 88%, #ffb5ad);
-  box-shadow: 0 0 10px 2px rgb(255 120 105 / 0.9), 0 0 36px 8px rgb(255 42 31 / 0.55), 0 0 110px 26px rgb(255 42 31 / 0.22);
-  transform: scaleY(var(--saber-p, 0.22));
-  transform-origin: 50% 0;
+  inset: 0;
+  border-radius: 0 5px 5px 0;
+  background: linear-gradient(180deg, #ff2a1f 0, #ff8d80 28%, #fff 50%, #ff8d80 72%, #ff2a1f 100%);
+  box-shadow: 0 0 10px 3px rgb(255 120 105 / 0.9), 0 0 30px 8px rgb(255 42 31 / 0.6), 0 0 70px 16px rgb(255 42 31 / 0.25);
+  transform: scaleX(var(--saber-p, 0.22));
+  transform-origin: 0 50%;
   will-change: transform;
+}
+
+@keyframes hum {
+  0%,
+  100% {
+    filter: brightness(1) saturate(1);
+  }
+
+  18% {
+    filter: brightness(1.28) saturate(1.1);
+  }
+
+  26% {
+    filter: brightness(0.9);
+  }
+
+  34% {
+    filter: brightness(1.18);
+  }
+
+  62% {
+    filter: brightness(1.06);
+  }
+
+  78% {
+    filter: brightness(1.32) saturate(1.15);
+  }
 }
 
 @keyframes ignite {
   from {
-    transform: scaleY(0);
+    transform: scaleX(0);
     opacity: 0.5;
   }
 
   to {
-    transform: scaleY(1);
+    transform: scaleX(1);
     opacity: 1;
   }
 }
@@ -432,21 +465,9 @@ button.hero-cta {
     mask-image: linear-gradient(180deg, #000 70%, transparent 100%), linear-gradient(90deg, transparent 0, #000 26%);
   }
 
-  .saber {
-    right: 8px;
-    width: 7px;
-  }
-
-  .saber-hilt {
-    height: 22px;
-  }
-
-  .saber-ignite {
-    top: 22px;
-  }
-
-  .saber-blade {
-    inset: 0 2px;
+  :root {
+    --hilt-w: 70px;
+    --blade-h: 8px;
   }
 
   .hero-copy {
