@@ -80,7 +80,7 @@ export const dictionary = {
         { year: "2022", title: "EH e primeiros projetos de P&D", text: "De 2022 a 2023. Desenvolvedor full stack em tempo integral no DARM Group. Front-end do EH, gerenciador de alarmes em Next.js e React, via FUNCEPE, com a Lightera como empresa parceira." },
         { year: "2023", title: "OSP Manager", text: "De 2023 a 2025. Desenvolvimento full stack do OSP Manager, sistema de gestão de redes GPON, com Angular, Spring Boot e AWS, via FUNCEPE, com a Lightera como empresa parceira." },
         { year: "2025", title: "Liderança do laboratório e projetos internos", text: "À frente do DARM Labs, com mais de 20 bolsistas, na gestão dos projetos internos do laboratório, como o MANU, e na organização da II Tech Week, com minicursos e palestras." },
-        { year: "2026", title: "Tech Lead e gestão", text: "O DARM Labs vira ALMA Labs em maio. Tech Lead do JUS Workspace até outubro e de um SaaS freelance para a Luga Energy. Em novembro, assumo EyeMed e IncluEdu, com gestão, liderança técnica e DevOps." },
+        { year: "2026", title: "Tech Lead e gestão", text: "O DARM Labs vira ALMA Labs em maio. Tech Lead do JUS Workspace e de um SaaS freelance para a Luga Energy. Em novembro, assumo EyeMed e IncluEdu, com gestão, liderança técnica e DevOps." },
       ],
     },
     contact: {
@@ -175,7 +175,7 @@ export const dictionary = {
         { year: "2022", title: "EH and first R&D projects", text: "From 2022 to 2023. Full-time full stack developer at DARM Group. Front end of EH, an alarm management system in Next.js and React, through FUNCEPE, with Lightera as the partner company." },
         { year: "2023", title: "OSP Manager", text: "From 2023 to 2025. Full stack development of OSP Manager, a GPON network management system, with Angular, Spring Boot and AWS, through FUNCEPE, with Lightera as the partner company." },
         { year: "2025", title: "Lab leadership and internal projects", text: "Heading DARM Labs, with more than 20 research fellows, managing the lab's internal projects, such as MANU, and organizing the II Tech Week, with short courses and talks." },
-        { year: "2026", title: "Tech Lead and management", text: "DARM Labs becomes ALMA Labs in May. Tech Lead of JUS Workspace until October and of a freelance SaaS for Luga Energy. In November, I take on EyeMed and IncluEdu, with management, technical leadership and DevOps." },
+        { year: "2026", title: "Tech Lead and management", text: "DARM Labs becomes ALMA Labs in May. Tech Lead of JUS Workspace and of a freelance SaaS for Luga Energy. In November, I take on EyeMed and IncluEdu, with management, technical leadership and DevOps." },
       ],
     },
     contact: {
