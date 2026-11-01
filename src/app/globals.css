@@ -108,27 +108,6 @@ a {
   color: var(--text);
 }
 
-.sound {
-  min-height: 44px;
-  padding: 0;
-  border: 0;
-  background: none;
-  color: var(--muted);
-  cursor: pointer;
-  font: inherit;
-  font-size: 0.82rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-}
-
-.sound[aria-pressed="true"] {
-  color: var(--text);
-  text-decoration: underline;
-  text-decoration-color: var(--saber);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 6px;
-}
-
 .locale {
   display: flex;
   gap: 7px;
@@ -436,7 +415,7 @@ button.hero-cta {
     display: none;
   }
 
-  .sound {
+  .locale {
     margin-left: auto;
   }
 

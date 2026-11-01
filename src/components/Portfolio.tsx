@@ -7,7 +7,6 @@ import { useEffect, useRef, useState } from "react";
 import { SocialLinks } from "@/components/SocialLinks";
 import { Sections } from "@/components/Sections";
 import { dictionary, type Locale } from "@/lib/dictionary";
-import { createSound, type Sound } from "@/lib/sound";
 
 const STORAGE_KEY = "portfolio-locale";
 
@@ -21,11 +20,9 @@ function shouldReduceMotion() {
 export function Portfolio() {
   const [locale, setLocale] = useState<Locale>("pt");
   const [mode, setMode] = useState<"pending" | "live" | "static">("pending");
-  const [soundOn, setSoundOn] = useState(false);
   const rootRef = useRef<HTMLElement>(null);
   const heroRef = useRef<HTMLElement>(null);
   const lenisRef = useRef<Lenis | null>(null);
-  const soundRef = useRef<Sound | null>(null);
   const text = dictionary[locale];
 
   useEffect(() => {
@@ -53,30 +50,6 @@ export function Portfolio() {
       localStorage.setItem(STORAGE_KEY, next);
     } catch {}
   };
-
-  const toggleSound = () => {
-    const next = !soundOn;
-    if (next) {
-      soundRef.current ??= createSound();
-      soundRef.current.on();
-    } else {
-      soundRef.current?.off();
-    }
-    setSoundOn(next);
-  };
-
-  useEffect(() => {
-    const onVisibility = () => {
-      if (document.hidden) soundRef.current?.pause();
-      else soundRef.current?.resume();
-    };
-    document.addEventListener("visibilitychange", onVisibility);
-    return () => {
-      document.removeEventListener("visibilitychange", onVisibility);
-      soundRef.current?.close();
-      soundRef.current = null;
-    };
-  }, []);
 
   // A lâmina cresce de 22% a 100% conforme o progresso da rolagem
   useEffect(() => {
@@ -190,15 +163,6 @@ export function Portfolio() {
             </a>
           ))}
         </nav>
-        <button
-          type="button"
-          className="sound"
-          onClick={toggleSound}
-          aria-pressed={soundOn}
-          aria-label={soundOn ? text.soundOff : text.soundOn}
-        >
-          {text.sound}
-        </button>
         <button type="button" className="locale" onClick={toggleLocale} aria-label={text.switchTo}>
           <span aria-current={locale === "pt" ? "true" : undefined}>PT</span>
           <span aria-hidden="true">/</span>

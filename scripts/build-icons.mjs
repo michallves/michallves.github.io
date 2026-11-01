@@ -18,7 +18,7 @@ const slugs = {
   "Claude Code": "claude", rclone: "rclone", tmux: "tmux",
   Gemini: "googlegemini", "GitHub Copilot": "githubcopilot", Jira: "jira", "GitHub Projects": "github",
   Discord: "discord", "Google Meet": "googlemeet", "Google Chat": "googlechat", "IntelliJ IDEA": "intellijidea",
-  Xcode: "xcode", Postman: "postman", "Google Cloud Console": "googlecloud", Authentication: "firebase",
+  Xcode: "xcode", ESLint: "eslint", SonarLint: "sonarqubeforide", "React Native": "react", Postman: "postman", "Google Cloud Console": "googlecloud", Authentication: "firebase",
   "App Check": "firebase", Firestore: "firebase", "Realtime Database": "firebase", "Cloud Storage": "firebase",
   "Cloud Functions": "firebase", "Firebase Hosting": "firebase", "App Hosting": "firebase",
 };
