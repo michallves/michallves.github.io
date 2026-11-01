@@ -6,8 +6,6 @@ import { contributions, featured, others, type Project } from "@/lib/projects";
 type SectionsProps = {
   text: Dictionary;
   locale: Locale;
-  canReplay: boolean;
-  onReplay: () => void;
 };
 
 function SectionHeader({ eyebrow, title }: { eyebrow: string; title: string }) {
@@ -29,7 +27,7 @@ function ProjectName({ project, label }: { project: Project; label: string }) {
   );
 }
 
-export function Sections({ text, locale, canReplay, onReplay }: SectionsProps) {
+export function Sections({ text, locale }: SectionsProps) {
   const numberFormat = new Intl.NumberFormat(locale === "pt" ? "pt-BR" : "en-US");
   const highest = Math.max(...contributions.map((entry) => entry.value));
   const { dossier, skills, campaigns, timeline, contact } = text;
@@ -126,12 +124,6 @@ export function Sections({ text, locale, canReplay, onReplay }: SectionsProps) {
               </div>
               <div className="campaign-meta">
                 <strong>{project.role[locale]}</strong>
-                {project.commits && (
-                  <span>
-                    {numberFormat.format(project.commits)} {campaigns.commits}
-                  </span>
-                )}
-                {project.status && <span className="campaign-status">{project.status[locale]}</span>}
               </div>
             </article>
           ))}
@@ -176,11 +168,6 @@ export function Sections({ text, locale, canReplay, onReplay }: SectionsProps) {
 
       <footer className="footer">
         <p>{text.footer}</p>
-        {canReplay && (
-          <button type="button" onClick={onReplay}>
-            {text.replay}
-          </button>
-        )}
       </footer>
     </>
   );

@@ -8,7 +8,7 @@ const slugs = {
   "Next.js": "nextdotjs", React: "react", TypeScript: "typescript", JavaScript: "javascript", Angular: "angular",
   Redux: "redux", Vite: "vite", HTML: "html5", Expo: "expo", Flutter: "flutter", Dart: "dart",
   "Android Studio": "androidstudio", Firebase: "firebase", Java: "openjdk", "Spring Boot": "springboot",
-  "Node.js": "nodedotjs", Python: "python", "Django REST": "django", Go: "go", MariaDB: "mariadb",
+  "Node.js": "nodedotjs", Python: "python", "Django REST": "django", Go: "go", MariaDB: "mariadb", DBeaver: "dbeaver",
   PostgreSQL: "postgresql", Docker: "docker", GitHub: "github", "GitHub Actions": "githubactions", Git: "git",
   Linux: "linux", Apache: "apache", Cloudflare: "cloudflare", Bitwarden: "bitwarden", Proxmox: "proxmox",
   "Google Cloud": "googlecloud", Notion: "notion", ClickUp: "clickup", Todoist: "todoist", Figma: "figma",

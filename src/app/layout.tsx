@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Sans, Michroma } from "next/font/google";
 import "./globals.css";
-import "./crawl.css";
 import "./sections.css";
 
 const display = Michroma({ weight: "400", subsets: ["latin"], variable: "--font-display", display: "swap" });

@@ -6,89 +6,101 @@ export type Project = {
   name: string;
   role: Localized;
   stack: string[];
-  commits?: number;
-  status?: Localized;
   note?: Localized;
   url?: string;
 };
 
+const fullStackFreelance = { pt: "Desenvolvimento full stack e DevOps (freelance)", en: "Full stack development and DevOps (freelance)" };
 const fullStack = { pt: "Desenvolvimento full stack", en: "Full stack development" };
+const frontEnd = { pt: "Front-end", en: "Front end" };
+const leadDevops = { pt: "Líder full stack e DevOps", en: "Full stack and DevOps lead" };
 const fullStackLead = { pt: "Líder full stack", en: "Full stack lead" };
-const techLead = { pt: "Tech Lead", en: "Tech Lead" };
 const mobile = { pt: "Mobile", en: "Mobile" };
 const author = { pt: "Autor", en: "Author" };
-const starting = { pt: "Em início", en: "Starting" };
+const leadManager = { pt: "Tech Lead · gestão, liderança técnica e DevOps", en: "Tech Lead · management, technical leadership and DevOps" };
 
-// Projetos em destaque: liderança ou maior volume de trabalho
+// Projetos em destaque, do mais recente ao mais antigo
 export const featured: Project[] = [
   {
-    name: "JUS Workspace",
-    role: techLead,
-    stack: ["Next.js", "TypeScript", "Python", "IA"],
-    commits: 372,
+    name: "EyeMed",
+    role: leadManager,
+    stack: [],
     note: {
-      pt: "Plataforma com microsserviços e IA aplicada. Defini o fluxo de desenvolvimento, code review e versionamento do time.",
-      en: "Platform with microservices and applied AI. I set the team's development flow, code review and versioning.",
+      pt: "Projeto de P&D na área farmacêutica, via EMBRAPII/SEBRAE, com a FARMA TECH como empresa parceira.",
+      en: "R&D project in the pharmaceutical field, through EMBRAPII/SEBRAE, with FARMA TECH as the partner company.",
+    },
+  },
+  {
+    name: "IncluEdu",
+    role: leadManager,
+    stack: [],
+    note: {
+      pt: "Projeto em parceria com a startup IncluEdu.",
+      en: "Project in partnership with the IncluEdu startup.",
+    },
+  },
+  {
+    name: "JUS Workspace",
+    role: leadManager,
+    stack: ["Next.js", "TypeScript", "Python", "IA"],
+    note: {
+      pt: "Projeto de P&D na área jurídica, via EMBRAPII/SEBRAE, com a JUS Digital como empresa parceira.",
+      en: "R&D project in the legal field, through EMBRAPII/SEBRAE, with JUS Digital as the partner company.",
     },
   },
   {
     name: "Luga Energy",
-    role: fullStack,
+    role: fullStackFreelance,
     stack: ["Django REST", "Next.js", "AWS"],
-    commits: 1328,
     note: {
-      pt: "Back-end, front-end e automações de um produto do setor de energia.",
-      en: "Back end, front end and automation for an energy sector product.",
-    },
-  },
-  {
-    name: "Maestro",
-    role: fullStackLead,
-    stack: ["Next.js", "Spring Boot", "Java 21", "MariaDB", "Docker", "AWS EC2", "GitHub Actions"],
-    commits: 57,
-    note: {
-      pt: "Liderança técnica do produto, da interface ao deploy.",
-      en: "Technical leadership of the product, from interface to deploy.",
+      pt: "Freelance em parceria com a Luga Energy, empresa de energia solar: desenvolvimento de um SaaS.",
+      en: "Freelance work in partnership with Luga Energy, a solar energy company: development of a SaaS product.",
     },
   },
   {
     name: "MANU",
-    role: fullStackLead,
-    stack: ["Next.js"],
-    commits: 101,
+    role: leadDevops,
+    stack: ["Next.js", "React", "Django", "Python", "PostgreSQL", "CI/CD"],
+    note: {
+      pt: "Gerenciador de laboratório, projeto interno do ALMA LABS, com pipelines de CI/CD, provisionamento de máquinas virtuais e distribuição em produção.",
+      en: "Laboratory management system, an internal ALMA LABS project, with CI/CD pipelines, virtual machine provisioning and production delivery.",
+    },
   },
   {
     name: "OSP Manager",
     role: fullStack,
     stack: ["Angular", "Redux", "Spring Boot", "MariaDB", "AWS"],
     note: {
-      pt: "Sistema para gestão de redes GPON.",
-      en: "System for managing GPON networks.",
+      pt: "Sistema para gestão de redes GPON. Projeto via FUNCEPE, com a Lightera como empresa parceira.",
+      en: "System for managing GPON networks. Project through FUNCEPE, with Lightera as the partner company.",
     },
   },
   {
-    name: "IncluEdu",
-    role: techLead,
-    stack: [],
-    status: starting,
+    name: "EH",
+    role: frontEnd,
+    stack: ["Next.js", "React"],
+    note: {
+      pt: "Gerenciador de alarmes. Projeto via FUNCEPE, com a Lightera como empresa parceira.",
+      en: "Alarm management system. Project through FUNCEPE, with Lightera as the partner company.",
+    },
   },
 ];
 
 export const others: Project[] = [
-  { name: "SGLP Limpeza Pública", role: mobile, stack: ["Flutter"], commits: 206 },
-  { name: "All App", role: mobile, stack: ["Flutter", "Firebase", "GitHub Actions"], commits: 78 },
-  { name: "APREC-IA", role: fullStack, stack: ["Django", "Next.js"], commits: 14 },
+  { name: "Maestro", role: fullStackLead, stack: ["Next.js", "Spring Boot", "Java 21", "MariaDB", "Docker", "AWS EC2", "GitHub Actions"] },
+  { name: "SGLP Limpeza Pública", role: mobile, stack: ["Flutter"] },
+  { name: "All App", role: mobile, stack: ["Flutter", "Firebase", "GitHub Actions"] },
+  { name: "APREC-IA", role: fullStack, stack: ["Django", "Next.js"] },
   { name: "AVIA", role: { pt: "CI/CD", en: "CI/CD" }, stack: ["GitHub Actions"] },
   { name: "SGG", role: { pt: "CI/CD", en: "CI/CD" }, stack: ["GitHub Actions"] },
-  { name: "Easy Flow", role: mobile, stack: ["Flutter", "Spring Boot"], commits: 65 },
-  { name: "CHF", role: mobile, stack: ["Flutter"], commits: 11 },
+  { name: "Easy Flow", role: mobile, stack: ["Flutter", "Spring Boot"] },
+  { name: "CHF", role: mobile, stack: ["Flutter"] },
   { name: "GoNoGo", role: mobile, stack: ["Flutter"] },
   { name: "KTK", role: mobile, stack: ["Flutter"] },
   { name: "MOBAK", role: { pt: "Mobile e front-end", en: "Mobile and front end" }, stack: ["Flutter", "TypeScript"] },
-  { name: "Fit Metric", role: mobile, stack: ["Flutter"], commits: 18 },
+  { name: "Fit Metric", role: mobile, stack: ["Flutter"] },
   { name: "Agendar", role: { pt: "Líder mobile", en: "Mobile lead" }, stack: ["Flutter"] },
   { name: "Smash App", role: mobile, stack: ["Flutter"] },
-  { name: "EH", role: { pt: "Front-end", en: "Front end" }, stack: ["Next.js"] },
   {
     name: "claude-assistente",
     role: author,

@@ -161,11 +161,6 @@ a {
   opacity: 0;
 }
 
-html.intro-lock,
-html.intro-lock body {
-  overflow: hidden;
-}
-
 .hero-stage {
   position: relative;
   display: flex;
@@ -205,10 +200,6 @@ html.intro-lock body {
   inset: 0 0 0 calc(var(--gutter) + var(--hilt-w) - 12px);
   transform-origin: 0 50%;
   animation: ignite 1.3s cubic-bezier(0.2, 0.8, 0.2, 1) 0.5s both, hum 2.6s ease-in-out 1.8s infinite;
-}
-
-html.intro-lock .saber-ignite {
-  animation-play-state: paused;
 }
 
 .saber-blade {

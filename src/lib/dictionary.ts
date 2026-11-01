@@ -24,16 +24,6 @@ export const dictionary = {
       { value: "3.690", label: "contribuições no GitHub em 2026" },
       { value: "Do time ao deploy", label: "gestão, liderança técnica e código: sites, aplicativos, APIs e nuvem" },
     ],
-    intro: {
-      skip: "Pular abertura",
-      lead: "Há pouco tempo, num campus do sertão cearense...",
-      title: "O lado sombrio do código",
-      paragraphs: [
-        "Comecei no IFCE Canindé, fazendo aplicativos para projetos de pesquisa. Pouco depois, já liderava o time.",
-        "Hoje comando times de P&D e entrego produtos inteiros, do aplicativo ao deploy, em áreas como energia, educação e IA.",
-        "Só em 2026 foram 3.690 contribuições no GitHub. A missão continua a mesma: fazer o sistema funcionar e o time crescer junto...",
-      ],
-    },
     dossier: {
       eyebrow: "01 · Dossiê",
       title: "Quem sou",
@@ -46,7 +36,7 @@ export const dictionary = {
         { title: "DARM Labs, hoje ALMA Labs", text: "Liderei o laboratório, com mais de 20 bolsistas presenciais." },
         { title: "II Tech Week", text: "Organizei o evento com o LAMPI: três minicursos e três palestras, em novembro de 2025." },
         { title: "Formação", text: "Dei minicursos de Next.js, GitHub e mobile, e montei uma trilha de front-end para voluntários." },
-        { title: "Padrões de time", text: "Defini fluxo de trabalho, code review com prazo de 24 horas e SemVer por commit." },
+        { title: "Padrões de time", text: "Padronizei o fluxo de desenvolvimento do time, da criação à entrega." },
       ],
     },
     skills: {
@@ -56,7 +46,7 @@ export const dictionary = {
       toolsTitle: "Stack e ferramentas",
       competencies: [
         { title: "Gestão de projetos e agilidade", items: ["Scrum e Scrum Master", "Kanban", "Planejamento e roadmap", "Estimativas, escopo e prazos", "Acompanhamento de entregas e riscos"] },
-        { title: "Liderança e pessoas", items: ["Liderança técnica de times", "Formação e mentoria de desenvolvedores", "Laboratório com mais de 20 bolsistas", "Code review com prazo de 24 horas", "Minicursos e eventos técnicos"] },
+        { title: "Liderança e pessoas", items: ["Liderança técnica de times", "Formação e mentoria de desenvolvedores", "Laboratório com mais de 20 bolsistas", "Padronização do fluxo de desenvolvimento", "Minicursos e eventos técnicos"] },
         { title: "Engenharia e arquitetura", items: ["Arquitetura de sistemas e microsserviços", "Fluxo de trabalho e padrões de código", "SemVer por commit e releases", "CI/CD e automação de deploy", "Integração de sistemas e APIs"] },
         { title: "IA aplicada a produtos", items: ["IA generativa dentro de produtos", "Claude e agentes com MCP", "Automação de rotina com IA", "Busca vetorial com pgvector"] },
       ],
@@ -65,7 +55,7 @@ export const dictionary = {
         { title: "Mobile", items: ["Flutter", "Dart", "Expo"] },
         { title: "Firebase", items: ["Authentication", "App Check", "Firestore", "Realtime Database", "Cloud Storage", "Cloud Functions", "Firebase Hosting", "App Hosting"] },
         { title: "Back-end e APIs", items: ["Java", "Spring Boot", "Node.js", "Python", "Django REST", "Go", "REST APIs", "Microsserviços"] },
-        { title: "Dados", items: ["MariaDB", "PostgreSQL", "pgvector", "NoSQL"] },
+        { title: "Dados", items: ["MariaDB", "PostgreSQL", "pgvector", "NoSQL", "DBeaver"] },
         { title: "Nuvem e infraestrutura", items: ["AWS", "EC2", "CodePipeline", "CloudFormation", "Google Cloud Console", "Docker", "Dokploy", "Proxmox", "Cloudflare", "Linux", "Apache", "Mailcow", "Bitwarden"] },
         { title: "CI/CD e versionamento", items: ["Git", "GitHub", "GitHub Actions", "CI/CD", "SemVer"] },
         { title: "IA e LLMs", items: ["Claude", "Claude Code", "ChatGPT", "Codex", "Gemini", "Google AI Studio", "Antigravity", "Grok", "GitHub Copilot", "MCP", "Agentes e skills", "IA generativa", "Whisper", "Síntese de voz"] },
@@ -80,7 +70,6 @@ export const dictionary = {
       title: "Projetos",
       featured: "Na linha de frente",
       others: "Outras missões",
-      commits: "commits",
       repository: "Abrir repositório de",
     },
     timeline: {
@@ -107,7 +96,6 @@ export const dictionary = {
       cvFile: "/cv/michael-alves-cv-pt.pdf",
     },
     footer: "Portfólio pessoal inspirado em Star Wars, sem vínculo com a Lucasfilm ou a Disney.",
-    replay: "Rever abertura",
   },
   en: {
     skip: "Skip to content",
@@ -132,16 +120,6 @@ export const dictionary = {
       { value: "3,690", label: "GitHub contributions in 2026" },
       { value: "From team to deploy", label: "management, technical leadership and code: websites, apps, APIs and cloud" },
     ],
-    intro: {
-      skip: "Skip intro",
-      lead: "Not so long ago, on a campus in the Brazilian backlands...",
-      title: "The dark side of code",
-      paragraphs: [
-        "I started at IFCE Canindé, building apps for research projects. Soon after, I was leading the team.",
-        "Today I command R&D teams and ship whole products, from the app to the deploy, in fields like energy, education and AI.",
-        "In 2026 alone, that meant 3,690 GitHub contributions. The mission stays the same: make the system work and grow the team with it...",
-      ],
-    },
     dossier: {
       eyebrow: "01 · Profile",
       title: "Who I am",
@@ -154,7 +132,7 @@ export const dictionary = {
         { title: "DARM Labs, now ALMA Labs", text: "I led the lab, with more than 20 on-site research fellows." },
         { title: "II Tech Week", text: "I organized the event with LAMPI: three short courses and three talks, in November 2025." },
         { title: "Teaching", text: "I taught short courses on Next.js, GitHub and mobile, and built a front-end track for volunteers." },
-        { title: "Team standards", text: "I defined the workflow, code review within 24 hours and SemVer per commit." },
+        { title: "Team standards", text: "I standardized the team's development workflow, from creation to delivery." },
       ],
     },
     skills: {
@@ -164,7 +142,7 @@ export const dictionary = {
       toolsTitle: "Stack and tools",
       competencies: [
         { title: "Project management and agile", items: ["Scrum and Scrum Master", "Kanban", "Planning and roadmap", "Estimates, scope and deadlines", "Tracking deliveries and risks"] },
-        { title: "Leadership and people", items: ["Technical team leadership", "Developer training and mentoring", "Lab with more than 20 research fellows", "Code review within 24 hours", "Short courses and technical events"] },
+        { title: "Leadership and people", items: ["Technical team leadership", "Developer training and mentoring", "Lab with more than 20 research fellows", "Standardized development workflow", "Short courses and technical events"] },
         { title: "Engineering and architecture", items: ["System and microservice architecture", "Workflow and code standards", "SemVer per commit and releases", "CI/CD and deploy automation", "Systems and API integration"] },
         { title: "AI applied to products", items: ["Generative AI inside products", "Claude and agents with MCP", "Routine automation with AI", "Vector search with pgvector"] },
       ],
@@ -173,7 +151,7 @@ export const dictionary = {
         { title: "Mobile", items: ["Flutter", "Dart", "Expo"] },
         { title: "Firebase", items: ["Authentication", "App Check", "Firestore", "Realtime Database", "Cloud Storage", "Cloud Functions", "Firebase Hosting", "App Hosting"] },
         { title: "Back end and APIs", items: ["Java", "Spring Boot", "Node.js", "Python", "Django REST", "Go", "REST APIs", "Microservices"] },
-        { title: "Data", items: ["MariaDB", "PostgreSQL", "pgvector", "NoSQL"] },
+        { title: "Data", items: ["MariaDB", "PostgreSQL", "pgvector", "NoSQL", "DBeaver"] },
         { title: "Cloud and infrastructure", items: ["AWS", "EC2", "CodePipeline", "CloudFormation", "Google Cloud Console", "Docker", "Dokploy", "Proxmox", "Cloudflare", "Linux", "Apache", "Mailcow", "Bitwarden"] },
         { title: "CI/CD and versioning", items: ["Git", "GitHub", "GitHub Actions", "CI/CD", "SemVer"] },
         { title: "AI and LLMs", items: ["Claude", "Claude Code", "ChatGPT", "Codex", "Gemini", "Google AI Studio", "Antigravity", "Grok", "GitHub Copilot", "MCP", "Agents and skills", "Generative AI", "Whisper", "Speech synthesis"] },
@@ -188,7 +166,6 @@ export const dictionary = {
       title: "Projects",
       featured: "On the front line",
       others: "Other missions",
-      commits: "commits",
       repository: "Open repository for",
     },
     timeline: {
@@ -215,7 +192,6 @@ export const dictionary = {
       cvFile: "/cv/michael-alves-cv-en.pdf",
     },
     footer: "Personal portfolio inspired by Star Wars, not affiliated with Lucasfilm or Disney.",
-    replay: "Replay intro",
   },
 } as const;
 

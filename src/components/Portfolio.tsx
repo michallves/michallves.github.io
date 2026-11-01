@@ -3,15 +3,13 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
-import { useCallback, useEffect, useRef, useState } from "react";
-import { IntroCrawl } from "@/components/IntroCrawl";
+import { useEffect, useRef, useState } from "react";
 import { SocialLinks } from "@/components/SocialLinks";
 import { Sections } from "@/components/Sections";
 import { dictionary, type Locale } from "@/lib/dictionary";
 import { createSound, type Sound } from "@/lib/sound";
 
 const STORAGE_KEY = "portfolio-locale";
-const INTRO_KEY = "portfolio-intro-seen";
 
 function shouldReduceMotion() {
   const connection = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
@@ -23,7 +21,6 @@ function shouldReduceMotion() {
 export function Portfolio() {
   const [locale, setLocale] = useState<Locale>("pt");
   const [mode, setMode] = useState<"pending" | "live" | "static">("pending");
-  const [introPlaying, setIntroPlaying] = useState(false);
   const [soundOn, setSoundOn] = useState(false);
   const rootRef = useRef<HTMLElement>(null);
   const heroRef = useRef<HTMLElement>(null);
@@ -31,24 +28,14 @@ export function Portfolio() {
   const soundRef = useRef<Sound | null>(null);
   const text = dictionary[locale];
 
-  const finishIntro = useCallback(() => {
-    try {
-      localStorage.setItem(INTRO_KEY, "1");
-    } catch {}
-    setIntroPlaying(false);
-  }, []);
-
   useEffect(() => {
     let saved: string | null = null;
-    let introSeen = false;
     try {
       saved = localStorage.getItem(STORAGE_KEY);
-      introSeen = localStorage.getItem(INTRO_KEY) === "1";
     } catch {}
     const preferred = saved ?? (navigator.language.toLowerCase().startsWith("pt") ? "pt" : "en");
     const reduced = shouldReduceMotion();
     setLocale(preferred === "en" ? "en" : "pt");
-    setIntroPlaying(!reduced && !introSeen && window.scrollY === 0 && !window.location.hash);
     setMode(reduced ? "static" : "live");
   }, []);
 
@@ -119,11 +106,6 @@ export function Portfolio() {
     };
   }, [mode]);
 
-  const replayIntro = () => {
-    lenisRef.current?.scrollTo(0, { immediate: true, force: true });
-    setIntroPlaying(true);
-  };
-
   useEffect(() => {
     if (mode !== "live" || !heroRef.current) return;
 
@@ -177,31 +159,21 @@ export function Portfolio() {
     };
   }, [mode]);
 
-  // Trava a rolagem durante a abertura e revela o texto do início quando ela termina
+  // Revela o texto do início ao carregar
   useEffect(() => {
     if (mode !== "live") return;
-    const root = document.documentElement;
-    if (introPlaying) {
-      root.classList.add("intro-lock");
-      lenisRef.current?.stop();
-      return () => {
-        root.classList.remove("intro-lock");
-        lenisRef.current?.start();
-      };
-    }
-
     const context = gsap.context(() => {
       gsap.from(".hero-reveal", {
         autoAlpha: 0,
         y: 16,
         duration: 0.9,
-        delay: 0.65,
+        delay: 0.2,
         stagger: 0.11,
         ease: "power2.out",
       });
     }, heroRef);
     return () => context.revert();
-  }, [mode, introPlaying]);
+  }, [mode]);
 
   return (
     <>
@@ -268,8 +240,6 @@ export function Portfolio() {
         </span>
       </div>
 
-      {introPlaying && <IntroCrawl text={text.intro} onDone={finishIntro} />}
-
       <main ref={rootRef}>
         <noscript>
           <style>{".hero--pending .hero-copy,.hero--pending .hero-facts{opacity:1}"}</style>
@@ -312,7 +282,7 @@ export function Portfolio() {
           </div>
         </section>
 
-        <Sections text={text} locale={locale} canReplay={mode === "live"} onReplay={replayIntro} />
+        <Sections text={text} locale={locale} />
       </main>
     </>
   );
