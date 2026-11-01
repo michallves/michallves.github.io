@@ -278,7 +278,9 @@ export function Portfolio() {
         <section ref={heroRef} className={`hero hero--${mode}`} aria-labelledby="hero-title">
           <div className="hero-stage">
             <div className="hero-portrait">
-              <img src="/michael.webp" width={1200} height={1202} alt={text.portraitAlt} fetchPriority="high" />
+              <div className="hero-portrait-fade">
+                <img src="/michael.webp" width={1200} height={1202} alt={text.portraitAlt} fetchPriority="high" />
+              </div>
             </div>
 
             <div className="hero-copy">

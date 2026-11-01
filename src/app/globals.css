@@ -175,7 +175,6 @@ html.intro-lock body {
   isolation: isolate;
   background:
     radial-gradient(55% 70% at 74% 58%, rgb(255 42 31 / 0.2), transparent 70%),
-    radial-gradient(70% 50% at 100% 0%, rgb(255 42 31 / 0.12), transparent 60%),
     var(--void);
 }
 
@@ -277,6 +276,12 @@ html.intro-lock .saber-ignite {
   aspect-ratio: 1200 / 1202;
   pointer-events: none;
   filter: drop-shadow(0 0 12px rgb(255 42 31 / 0.5)) drop-shadow(0 0 46px rgb(255 42 31 / 0.2));
+}
+
+/* O degradê fica no filho: assim o brilho do pai não é cortado pela máscara */
+.hero-portrait-fade {
+  width: 100%;
+  height: 100%;
   -webkit-mask-image: linear-gradient(180deg, #000 74%, transparent 100%), linear-gradient(90deg, transparent 2%, #000 24%);
   -webkit-mask-composite: source-in;
   mask-image: linear-gradient(180deg, #000 74%, transparent 100%), linear-gradient(90deg, transparent 2%, #000 24%);
@@ -461,6 +466,9 @@ button.hero-cta {
     left: 50%;
     height: 46svh;
     translate: -50% 0;
+  }
+
+  .hero-portrait-fade {
     -webkit-mask-image: linear-gradient(180deg, #000 70%, transparent 100%), linear-gradient(90deg, transparent 0, #000 26%);
     mask-image: linear-gradient(180deg, #000 70%, transparent 100%), linear-gradient(90deg, transparent 0, #000 26%);
   }
