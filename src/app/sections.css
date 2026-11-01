@@ -31,9 +31,10 @@
 .section h2 {
   margin: 0;
   font-family: var(--font-display), system-ui, sans-serif;
-  font-size: clamp(1.9rem, 5vw, 4.2rem);
+  font-size: clamp(1.5rem, 5vw, 4.2rem);
   font-weight: 400;
   line-height: 1.12;
+  overflow-wrap: break-word;
   letter-spacing: -0.03em;
   text-transform: uppercase;
 }
@@ -151,20 +152,31 @@
   color: var(--muted);
 }
 
-.arsenal-grid {
+.skills-grid,
+.tools-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1px;
   background: var(--line);
   border: 1px solid var(--line);
 }
 
-.arsenal-group {
+.skills-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: clamp(40px, 6vw, 72px);
+}
+
+.tools-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.skill-card,
+.tool-group {
   padding: clamp(20px, 3vw, 34px);
   background: var(--panel);
 }
 
-.arsenal-group h3 {
+.skill-card h4,
+.tool-group h4 {
   margin: 0 0 16px;
   color: var(--saber-soft);
   font-size: 0.86rem;
@@ -173,14 +185,76 @@
   text-transform: uppercase;
 }
 
-.arsenal-group ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 18px;
+@media (min-width: 1001px) {
+  .skill-card h4 {
+    min-height: 2.9em;
+  }
+}
+
+.skill-card ul {
+  display: grid;
+  gap: 10px;
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  font-size: 1rem;
+}
+
+.skill-card li {
+  position: relative;
+  padding-left: 16px;
+}
+
+.skill-card li::before {
+  content: "";
+  position: absolute;
+  top: 0.62em;
+  left: 0;
+  width: 6px;
+  height: 1px;
+  background: var(--saber);
+  box-shadow: 0 0 6px var(--saber);
+}
+
+.tool-group ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tool {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px 6px 10px;
+  border: 1px solid var(--line);
+  font-size: 0.95rem;
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+.tool:hover {
+  border-color: var(--saber);
+  background: rgb(255 42 31 / 0.08);
+}
+
+.tool svg {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  fill: currentColor;
+}
+
+.tool-dot {
+  width: 5px;
+  height: 5px;
+  margin: 0 5.5px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--saber);
+  box-shadow: 0 0 6px var(--saber);
 }
 
 .campaign {
@@ -356,7 +430,7 @@
 
 .section .contact-title {
   max-width: 1240px;
-  font-size: clamp(2.1rem, 7.4vw, 6.6rem);
+  font-size: clamp(1.6rem, 7.4vw, 6.6rem);
 }
 
 .contact-text {
@@ -423,14 +497,20 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .arsenal-grid {
+  .skills-grid,
+  .tools-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tools-grid > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
   }
 }
 
 @media (max-width: 640px) {
   .leadership,
-  .arsenal-grid {
+  .skills-grid,
+  .tools-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 

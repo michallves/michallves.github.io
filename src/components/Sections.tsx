@@ -1,5 +1,6 @@
 import { ContactLinks } from "@/components/ContactLinks";
 import type { Dictionary, Locale } from "@/lib/dictionary";
+import { toolIcons } from "@/lib/icons";
 import { contributions, featured, others, type Project } from "@/lib/projects";
 
 type SectionsProps = {
@@ -31,7 +32,7 @@ function ProjectName({ project, label }: { project: Project; label: string }) {
 export function Sections({ text, locale, canReplay, onReplay }: SectionsProps) {
   const numberFormat = new Intl.NumberFormat(locale === "pt" ? "pt-BR" : "en-US");
   const highest = Math.max(...contributions.map((entry) => entry.value));
-  const { dossier, arsenal, campaigns, timeline, contact } = text;
+  const { dossier, skills, campaigns, timeline, contact } = text;
 
   return (
     <>
@@ -66,15 +67,40 @@ export function Sections({ text, locale, canReplay, onReplay }: SectionsProps) {
         </ul>
       </section>
 
-      <section id="arsenal" className="section section--panel">
-        <SectionHeader eyebrow={arsenal.eyebrow} title={arsenal.title} />
-        <div className="arsenal-grid">
-          {arsenal.groups.map((group) => (
-            <div key={group.title} className="arsenal-group reveal">
-              <h3>{group.title}</h3>
+      <section id="competencias" className="section section--panel">
+        <SectionHeader eyebrow={skills.eyebrow} title={skills.title} />
+
+        <h3 className="subtitle reveal">{skills.competenciesTitle}</h3>
+        <div className="skills-grid reveal">
+          {skills.competencies.map((card) => (
+            <div key={card.title} className="skill-card">
+              <h4>{card.title}</h4>
+              <ul>
+                {card.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <h3 className="subtitle reveal">{skills.toolsTitle}</h3>
+        <div className="tools-grid reveal">
+          {skills.groups.map((group) => (
+            <div key={group.title} className="tool-group">
+              <h4>{group.title}</h4>
               <ul>
                 {group.items.map((item) => (
-                  <li key={item}>{item}</li>
+                  <li key={item} className="tool">
+                    {toolIcons[item] ? (
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d={toolIcons[item]} />
+                      </svg>
+                    ) : (
+                      <span className="tool-dot" aria-hidden="true" />
+                    )}
+                    {item}
+                  </li>
                 ))}
               </ul>
             </div>
