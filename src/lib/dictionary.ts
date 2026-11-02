@@ -6,11 +6,11 @@ export const dictionary = {
     concept: "O lado sombrio do código",
     switchTo: "Switch to English",
     nav: [
-      { href: "#dossie", label: "Dossiê" },
+      { href: "#dossie", label: "Sobre mim" },
       { href: "#competencias", label: "Competências" },
       { href: "#campanhas", label: "Campanhas" },
-      { href: "#linha-do-tempo", label: "Linha do tempo" },
-      { href: "#transmissao", label: "Transmissão" },
+      { href: "#linha-do-tempo", label: "Trajetória" },
+      { href: "#transmissao", label: "Contate-me" },
     ],
     role: "Gestor de Projetos · Tech Lead · Desenvolvedor · DevOps",
     tagline: "Gerencio times e projetos, lidero tecnicamente e desenvolvo sites, aplicativos, APIs e infraestrutura.",
@@ -22,7 +22,7 @@ export const dictionary = {
       { value: "Do time ao deploy", label: "gestão, liderança técnica e código: sites, aplicativos, APIs e nuvem" },
     ],
     dossier: {
-      eyebrow: "01 · Dossiê",
+      eyebrow: "01 · Sobre mim",
       title: "Quem sou",
       summary:
         "Sou gestor de projetos, líder técnico e desenvolvedor full stack, mobile e DevOps. Conduzo projetos de P&D com empresas parceiras, do planejamento à entrega: organizo o time e o fluxo de trabalho, lidero tecnicamente e levo para produção sites, aplicativos, APIs e infraestrutura. Já liderei equipes com mais de 20 bolsistas e uso IA generativa nos produtos e na rotina de desenvolvimento.",
@@ -70,7 +70,7 @@ export const dictionary = {
       repository: "Abrir repositório de",
     },
     timeline: {
-      eyebrow: "04 · Linha do tempo",
+      eyebrow: "04 · Trajetória",
       title: "Trajetória",
       items: [
         { year: "2021", title: "Formação", text: "Início da graduação em Análise e Desenvolvimento de Sistemas, no IFCE Canindé." },
@@ -81,7 +81,7 @@ export const dictionary = {
       ],
     },
     contact: {
-      eyebrow: "05 · Transmissão",
+      eyebrow: "05 · Contate-me",
       title: "Vamos construir algo?",
       text: "Aberto a conversas sobre projetos e oportunidades.",
       whatsapp: "WhatsApp",
@@ -98,11 +98,11 @@ export const dictionary = {
     concept: "The dark side of code",
     switchTo: "Mudar para português",
     nav: [
-      { href: "#dossie", label: "Profile" },
+      { href: "#dossie", label: "About me" },
       { href: "#competencias", label: "Skills" },
       { href: "#campanhas", label: "Campaigns" },
-      { href: "#linha-do-tempo", label: "Timeline" },
-      { href: "#transmissao", label: "Transmission" },
+      { href: "#linha-do-tempo", label: "Journey" },
+      { href: "#transmissao", label: "Contact me" },
     ],
     role: "Project Manager · Tech Lead · Developer · DevOps",
     tagline: "I manage teams and projects, lead technically and build websites, apps, APIs and infrastructure.",
@@ -114,7 +114,7 @@ export const dictionary = {
       { value: "From team to deploy", label: "management, technical leadership and code: websites, apps, APIs and cloud" },
     ],
     dossier: {
-      eyebrow: "01 · Profile",
+      eyebrow: "01 · About me",
       title: "Who I am",
       summary:
         "I'm a project manager, a technical lead and a full stack, mobile and DevOps developer. I run R&D projects with partner companies, from planning to delivery: I organize the team and the workflow, lead technically and take websites, apps, APIs and infrastructure to production. I have led teams of more than 20 research fellows and use generative AI in products and in the development routine.",
@@ -162,7 +162,7 @@ export const dictionary = {
       repository: "Open repository for",
     },
     timeline: {
-      eyebrow: "04 · Timeline",
+      eyebrow: "04 · Journey",
       title: "Path",
       items: [
         { year: "2021", title: "Education", text: "Started the degree in Systems Analysis and Development at IFCE Canindé." },
@@ -173,7 +173,7 @@ export const dictionary = {
       ],
     },
     contact: {
-      eyebrow: "05 · Transmission",
+      eyebrow: "05 · Contact me",
       title: "Shall we build something?",
       text: "Open to conversations about projects and opportunities.",
       whatsapp: "WhatsApp",
