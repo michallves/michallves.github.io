@@ -1,4 +1,5 @@
 import { ContactLinks } from "@/components/ContactLinks";
+import { Highlights } from "@/components/Highlights";
 import type { Dictionary, Locale } from "@/lib/dictionary";
 import { toolIcons } from "@/lib/icons";
 import { contributions, featured, others, type Project } from "@/lib/projects";
@@ -34,6 +35,8 @@ export function Sections({ text, locale }: SectionsProps) {
 
   return (
     <>
+      <Highlights text={text} locale={locale} />
+
       <section id="dossie" className="section">
         <SectionHeader eyebrow={dossier.eyebrow} title={dossier.title} />
         <div className="dossier-grid">

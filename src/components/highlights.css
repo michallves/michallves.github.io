@@ -1,0 +1,132 @@
+.highlight-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: clamp(24px, 4vw, 40px);
+}
+
+.highlight-filter {
+  padding: 8px 16px;
+  border: 1px solid rgb(255 255 255 / 0.16);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.highlight-filter:hover,
+.highlight-filter:focus-visible {
+  color: #fff;
+  border-color: var(--saber);
+}
+
+.highlight-filter[aria-pressed="true"] {
+  color: #fff;
+  border-color: var(--saber);
+  background: rgb(255 42 31 / 0.14);
+}
+
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  align-items: start;
+  gap: clamp(16px, 2.4vw, 28px);
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.highlight-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 0.1);
+  border-radius: 14px;
+  background: var(--panel);
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+.highlight-card:hover {
+  border-color: rgb(255 42 31 / 0.6);
+  transform: translateY(-3px);
+}
+
+.highlight-cover {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #0b0b0e;
+}
+
+.highlight-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.highlight-cover--plain {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, #14090a, #0b0b0e 60%);
+  color: rgb(255 255 255 / 0.18);
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.highlight-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px 20px 22px;
+}
+
+.highlight-body h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.highlight-body p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.highlight-body .highlight-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.highlight-kind {
+  color: var(--saber-soft);
+}
+
+.highlight-link {
+  margin-top: auto;
+  padding-top: 6px;
+  color: #fff;
+  font-size: 0.88rem;
+  text-decoration: underline;
+  text-decoration-color: var(--saber);
+  text-underline-offset: 4px;
+}
+
+.highlight-link:hover,
+.highlight-link:focus-visible {
+  color: var(--saber-soft);
+}
