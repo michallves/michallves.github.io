@@ -64,6 +64,17 @@ export const highlights: Highlight[] = [
     },
   },
   {
+    id: "ai-workflow",
+    kind: "workflow",
+    date: "2026-06-01",
+    dateLabel: { pt: "2026", en: "2026" },
+    title: { pt: "IA no produto e na rotina do time", en: "AI in the product and the team's routine" },
+    text: {
+      pt: "IA generativa dentro dos produtos e no dia a dia de desenvolvimento: Claude, agentes com MCP e automação de tarefas, do código ao deploy.",
+      en: "Generative AI inside products and in daily development: Claude, agents with MCP and task automation, from code to deploy.",
+    },
+  },
+  {
     id: "manu",
     kind: "project",
     date: "2025-01-01",

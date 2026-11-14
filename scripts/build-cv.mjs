@@ -20,7 +20,7 @@ const skills = [
 
 const cv = {
   pt: {
-    role: "Tech Lead · Full Stack · Mobile · DevOps",
+    role: "Tech Lead · Full Stack · Mobile · DevOps · IA",
     place: "Canindé, Ceará, Brasil",
     headings: ["Resumo", "Experiência", "Projetos", "Liderança e comunidade", "Competências", "Formação"],
     summary:
@@ -46,7 +46,7 @@ const cv = {
     education: "Análise e Desenvolvimento de Sistemas, IFCE Canindé. Início em 2021, conclusão prevista para o fim de 2026.",
   },
   en: {
-    role: "Tech Lead · Full Stack · Mobile · DevOps",
+    role: "Tech Lead · Full Stack · Mobile · DevOps · AI",
     place: "Canindé, Ceará, Brazil",
     headings: ["Summary", "Experience", "Projects", "Leadership and community", "Skills", "Education"],
     summary:

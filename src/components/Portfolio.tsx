@@ -39,7 +39,7 @@ export function Portfolio() {
   useEffect(() => {
     document.documentElement.lang = locale === "pt" ? "pt-BR" : "en";
     document.title =
-      locale === "pt" ? "Michael Alves | Tech Lead e Full Stack" : "Michael Alves | Tech Lead and Full Stack";
+      locale === "pt" ? "Michael Alves | Tech Lead, Full Stack e IA" : "Michael Alves | Tech Lead, Full Stack and AI";
     ScrollTrigger.refresh();
   }, [locale]);
 
