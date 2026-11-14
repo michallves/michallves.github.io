@@ -37,17 +37,6 @@ export const highlights: Highlight[] = [
     source: "Instagram",
   },
   {
-    id: "tech-week-2025",
-    kind: "talk",
-    date: "2025-11-01",
-    dateLabel: { pt: "nov 2025", en: "Nov 2025" },
-    title: { pt: "II Tech Week", en: "II Tech Week" },
-    text: {
-      pt: "Organização da segunda edição com o LAMPI: três minicursos e três palestras. Ministrei minicursos de web, GitHub e mobile.",
-      en: "Organized the second edition with LAMPI: three short courses and three talks. I taught short courses on web, GitHub and mobile.",
-    },
-  },
-  {
     id: "dev-flow",
     kind: "workflow",
     date: "2026-01-01",
@@ -73,16 +62,10 @@ export const highlights: Highlight[] = [
       pt: "IA generativa dentro dos produtos e no dia a dia de desenvolvimento: Claude, agentes com MCP e automação de tarefas, do código ao deploy.",
       en: "Generative AI inside products and in daily development: Claude, agents with MCP and task automation, from code to deploy.",
     },
-  },
-  {
-    id: "manu",
-    kind: "project",
-    date: "2025-01-01",
-    dateLabel: { pt: "2025", en: "2025" },
-    title: { pt: "MANU, gerenciador de laboratório", en: "MANU, laboratory manager" },
-    text: {
-      pt: "Projeto interno do ALMA Labs com pipelines de CI/CD, provisionamento de máquinas virtuais e distribuição em produção.",
-      en: "Internal ALMA Labs project with CI/CD pipelines, virtual machine provisioning and production delivery.",
+    image: "/highlights/ai-flow.webp",
+    imageAlt: {
+      pt: "IA generativa no centro, ligada a produto, agentes, rotina e entrega",
+      en: "Generative AI at the center, connected to product, agents, routine and delivery",
     },
   },
 ];
